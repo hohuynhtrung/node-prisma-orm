@@ -17,5 +17,9 @@ const constants = {
     // Server error
     internalServerError: 500,
   },
+
+  prismaCodes: {
+    duplacate: "P2002",
+  },
 };
 module.exports = constants;
