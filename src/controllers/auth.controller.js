@@ -12,4 +12,8 @@ const register = async (req, res) => {
   });
 };
 
-module.exports = { register };
+const getCurrentUser = async (req, res) => {
+  res.success(req.auth.user);
+};
+
+module.exports = { register, getCurrentUser };
