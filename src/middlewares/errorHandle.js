@@ -1,7 +1,8 @@
-const isProduction = require("@/utils/isProduction");
 const {
   PrismaClientValidationError,
 } = require("@prisma/client/runtime/client");
+
+const isProduction = require("@/utils/isProduction");
 const { prismaCodes, httpCodes } = require("@/config/constants");
 
 function errorHanadle(error, req, res, next) {

@@ -1,4 +1,3 @@
-const authConfig = require("@/config/auth");
 const authService = require("@/services/auth.service");
 
 const register = async (req, res) => {

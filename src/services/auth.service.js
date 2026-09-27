@@ -1,6 +1,7 @@
-const bcrypt = require("bcrypt");
 const crypto = require("node:crypto");
+const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+
 const prisma = require("@/libs/prisma");
 const authConfig = require("@/config/auth");
 const randomString = require("@/utils/randomString");

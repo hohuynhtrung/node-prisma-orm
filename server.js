@@ -5,8 +5,8 @@ require("module-alias/register");
 const express = require("express");
 const cors = require("cors");
 
-const customResponse = require("@/middlewares/customResponse");
 const rootRouter = require("@/routes");
+const customResponse = require("@/middlewares/customResponse");
 const errorHanadle = require("@/middlewares/errorHandle");
 
 const app = express();
