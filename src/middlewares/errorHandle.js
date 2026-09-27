@@ -27,7 +27,10 @@ function errorHanadle(error, req, res, next) {
     );
   }
 
-  res.error(error ?? "Server error", 500);
+  res.error(
+    error ? { info: error, message: String(error) } : "Server error",
+    500,
+  );
 }
 
 module.exports = errorHanadle;
