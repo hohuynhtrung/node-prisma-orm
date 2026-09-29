@@ -6,13 +6,17 @@ class PostService {
       select: {
         id: true,
         title: true,
+        description: true,
         slug: true,
+        minRead: true,
+        image: true,
         publishedAt: true,
         user: {
           select: {
             id: true,
             email: true,
-            name: true,
+            firstName: true,
+            lastName: true,
           },
         },
       },

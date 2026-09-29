@@ -1,8 +1,11 @@
 const postService = require("@/services/post.service");
+const postTransformer = require("@/transformers/post.transformer");
 
 const getAll = async (req, res) => {
   const posts = await postService.getAll();
-  res.success(posts);
+
+  const response = postTransformer(post);
+  res.success(response);
 };
 
 module.exports = { getAll };

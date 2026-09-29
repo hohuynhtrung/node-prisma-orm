@@ -1,17 +1,26 @@
 {
   "dependencies": {
+    "@ai-sdk/google": "^3.0.129",
+    "@ai-sdk/openai": "^3.0.119",
+    "@google/genai": "^2.24.0",
     "@prisma/adapter-mariadb": "^7.10.0",
     "@prisma/client": "^7.10.0",
+    "ai": "^6.0.293",
     "bcrypt": "^6.0.0",
     "cors": "^2.8.6",
     "dotenv": "^18.0.3",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
-    "module-alias": "^2.3.4"
+    "module-alias": "^2.3.4",
+    "reading-time": "^1.5.0",
+    "sharp": "^0.35.5",
+    "zod": "^4.6.5"
   },
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "node --watch server.js",
+    "generate-post-ideas": "node ./src/commands/generatePostIdea.js",
+    "generate-post": "node .src/commands/generatePost.js"
   },
   "devDependencies": {
     "prisma": "^7.10.0"
