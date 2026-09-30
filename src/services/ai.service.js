@@ -2,7 +2,8 @@ const { Buffer } = require("node:buffer");
 const fs = require("node:fs/promises");
 const path = require("node:path");
 const sharp = require("sharp");
-const { gateway, generateText } = require("ai");
+const { google } = require("@ai-sdk/google");
+const { gateway, generateText, streamText } = require("ai");
 
 const randomString = require("@/utils/randomString");
 
@@ -31,8 +32,27 @@ class AIService {
     });
   }
 
-  stream() {
-    // ...
+  async streamText(prompt, model = google("gemini-3.8-flash")) {
+    let streamError;
+
+    const result = streamText({
+      model,
+      prompt,
+      onError: ({ error }) => {
+        streamError = error;
+      },
+    });
+
+    const output = [];
+
+    for await (const textPart of result.textStream) {
+      console.log("textPart:", textPart);
+      output.push(textPart);
+    }
+
+    if (streamError) throw streamError;
+
+    return output;
   }
 
   async generateImage(
